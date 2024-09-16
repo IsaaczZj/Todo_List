@@ -1,4 +1,5 @@
 import {
+  CheckIcon,
   ChevronRightIcon,
   DeleteIcon,
   Link,
@@ -25,10 +26,11 @@ const Tasks = ({ tasks, onTaskClick, onDeleteTaskClick }) => {
           <li key={task.id} className="flex gap-2">
             <button
               onClick={() => onTaskClick(task.id)}
-              className={`bg-slate-400 text-left text-white p-2 rounded-md  w-full ${
+              className={`bg-slate-400 text-left text-white flex items-center gap-3 p-2 rounded-md  w-full ${
                 task.isCompleted && "line-through"
               }`}
             >
+              {task.isCompleted && <CheckIcon/> }
               {task.title}
             </button>
             <button
